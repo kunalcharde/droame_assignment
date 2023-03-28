@@ -10,7 +10,6 @@ const reducer = (state,action) =>{
     switch(action.type){
             case "ADD_COSTUMER":
                 return [...state,action.payload]
-
             case "DELETE_CUSTOMER" :
                 return state.filter((customer)=> customer.customer_id !== action.payload)
             case "UPDATE_CUSTOMER" :

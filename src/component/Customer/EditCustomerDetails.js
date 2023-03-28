@@ -86,7 +86,7 @@ export default function EditCustomer({id,data}) {
         payload: {...customerDetails}
       });
   }
-    
+  // EDIT CUSTOMER DETAILS
   return (
     <div>
       <Button  onClick={(e)=>handleClickOpen(e)} sx={{marginRight:2}}>
@@ -98,7 +98,7 @@ export default function EditCustomer({id,data}) {
         open={open}
       >
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Customer Details
+         Edit Customer Details
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <Grid container xs={12} sm={12} spacing={2} component="form">

@@ -24,11 +24,10 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-
-
 function BootstrapDialogTitle(props) {
   const { children, onClose, ...other } = props;
 
+  //BOOKING FORM
   return (
     <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
       {children}

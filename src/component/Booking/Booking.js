@@ -5,6 +5,8 @@ import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor';
 import NavBar from '../LandingPage/NavBar';
 import BookingTable from './BookingTable';
 
+
+// BOOKING MAIN COMPONENT
 function Booking() {
   return (
     <div>

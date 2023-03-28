@@ -10,7 +10,7 @@ const NavRoutes = () => {
         <Route index path="/" element={<LandingPage />} />
         <Route path="/customer" element={<CustomerDetailsForm />} />
         <Route path="/booking" element={<BookingForm />} />
-        <Route path="/anylisis" element={<BookingForm />} />
+        <Route path="/anylisis" element={<LandingPage />} />
       </Routes>
     </BrowserRouter>
   );
