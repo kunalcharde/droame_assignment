@@ -1,0 +1,8 @@
+.heading{
+    /* font-size: clamp(25px 2vw 60px); */
+    font-size: clamp(1.8rem, 3.5vw, 3.8rem);
+    margin-bottom: 1rem;
+}
+h1,h2,h3,h3{
+    margin: 0;
+}
