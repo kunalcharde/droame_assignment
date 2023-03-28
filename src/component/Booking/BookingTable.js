@@ -11,7 +11,7 @@ import Paper from "@mui/material/Paper";
 import { Button, Grid } from "@mui/material";
 import { BookingContext } from "../../Context/bookingContext";
 import { v4 as uuidv4 } from "uuid";
-
+import EditBooking from "./EditBooking";
 import {
   collection,
   getDocs,
@@ -78,8 +78,7 @@ export default function BookingTable() {
             <StyledTableCell align="center">Customer Phone</StyledTableCell>
             <StyledTableCell align="center">Booking Location</StyledTableCell>
             <StyledTableCell align="center">Booking Type</StyledTableCell>
-            <StyledTableCell align="center">Booking Data</StyledTableCell>
-            <StyledTableCell align="center">Booking On</StyledTableCell>
+            <StyledTableCell align="center">Booking Date</StyledTableCell>
             <StyledTableCell align="center">Actions</StyledTableCell>
           </TableRow>
         </TableHead>
@@ -103,13 +102,10 @@ export default function BookingTable() {
                   {booking.bookingType}
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  {booking.bookingTime.toString()}
+                  {/* {booking.bookingDate.toDate().toLocaleString()} */}
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  {booking.bookingDate.toString()}
-                </StyledTableCell>
-                <StyledTableCell align="center">
-                  <Button sx={{ marginRight: 2 }}>Edit</Button>
+                  <Button sx={{ marginRight: 2 }}><EditBooking id={booking.booking_id} data={booking}/></Button>
                   <Button onClick={() => {handleDeleteBooking(booking.booking_id);}}>Delete</Button>
                 </StyledTableCell>
               </StyledTableRow>

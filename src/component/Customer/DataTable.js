@@ -13,6 +13,7 @@ import { customerContext } from "../../Context/customerContext";
 import { v4 as uuidv4 } from "uuid";
 import { collection, getDocs,doc, deleteDoc,onSnapshot  } from "firebase/firestore";
 import { db } from "../../FirbaseConfig";
+import EditCustomer from "./EditCustomerDetails";
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -94,7 +95,7 @@ export default function DataTable() {
                   {customer.address}
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  <Button sx={{ marginRight: 2 }}>Edit</Button>
+                  <Button sx={{ marginRight: 2 }}><EditCustomer id={customer.customer_id} data={customer}/></Button>
                   <Button
                     onClick={() => {
                       handleDeleteCustomer(customer.customer_id);

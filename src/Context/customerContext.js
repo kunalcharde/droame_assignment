@@ -13,7 +13,10 @@ const reducer = (state,action) =>{
 
             case "DELETE_CUSTOMER" :
                 return state.filter((customer)=> customer.customer_id !== action.payload)
-            default : return state
+            case "UPDATE_CUSTOMER" :
+                return [...state,action.payload]
+            
+           default : return state
     }
 }
 

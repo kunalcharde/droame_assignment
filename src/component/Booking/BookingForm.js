@@ -113,6 +113,7 @@ export default function BookingForm() {
                 <TextField 
                    required
                    fullWidth
+                   value={bookingDetails.first_name}
                    placeholder='Enter Customer First Name'
                    onChange={(e)=>{setBookingDetails({...bookingDetails,first_name: e.target.value})}}
                 />

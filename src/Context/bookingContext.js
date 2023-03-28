@@ -13,6 +13,8 @@ const reducer = (state,action) =>{
 
             case "DELETE_BOOKING" :
                 return state.filter((customer)=> customer.customer_id !== action.payload)
+            case "UPDATE_BOOKING" :
+              return [...state,action.payload]
             default : return state
     }
 }
