@@ -68,11 +68,27 @@ export default function BookingTable() {
     console.log("fetch", data);
   }, [state]);
 
+  function dateandTime(timestamp){
+    console.log(timestamp,"Date and Time")
+    const seconds = timestamp.seconds
+    const nanoseconds = timestamp.nanoseconds
+    const milliseconds = seconds * 1000 + Math.round(nanoseconds / 1e6);
+    console.log("Seconds :", seconds)
+    console.log("Nano :", nanoseconds)
+    const fullDate = new Date(milliseconds)
+    const Month = fullDate.getMonth()+1;
+    const Day = fullDate.getDate()
+    const Year = fullDate.getFullYear()
+    console.log(Year,"year")
+    return `${Day}-${Month}-${Year}`
+  }
+
   return (
     <TableContainer component={Paper} sx={{ marginTop: 2 }}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
+            <StyledTableCell align="center">Sr.No</StyledTableCell>
             <StyledTableCell align="center">Customer Name</StyledTableCell>
             <StyledTableCell align="center">Customer Email</StyledTableCell>
             <StyledTableCell align="center">Customer Phone</StyledTableCell>
@@ -86,6 +102,7 @@ export default function BookingTable() {
           {data.length ? (
             data.map((booking, i) => (
               <StyledTableRow key={uuidv4()}>
+                <StyledTableCell align="center">{i+1}</StyledTableCell>
                 <StyledTableCell align="center">
                   {booking.first_name} {booking.last_name}
                 </StyledTableCell>
@@ -103,6 +120,7 @@ export default function BookingTable() {
                 </StyledTableCell>
                 <StyledTableCell align="center">
                   {/* {booking.bookingDate.toDate().toLocaleString()} */}
+                 {dateandTime(booking.bookingDate)}
                 </StyledTableCell>
                 <StyledTableCell align="center">
                   <Button sx={{ marginRight: 2 }}><EditBooking id={booking.booking_id} data={booking}/></Button>

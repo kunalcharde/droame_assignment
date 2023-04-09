@@ -67,6 +67,7 @@ export default function DataTable() {
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
+            <StyledTableCell align="center">Sr no.</StyledTableCell>
             <StyledTableCell align="center">Customer Name</StyledTableCell>
             <StyledTableCell align="center">Customer Phone</StyledTableCell>
             <StyledTableCell align="center">Customer Email</StyledTableCell>
@@ -79,19 +80,18 @@ export default function DataTable() {
             data.map((customer, i) => (
               <StyledTableRow key={uuidv4()}>
                 <StyledTableCell align="center">
-                  {" "}
+                  {i+1}
+                </StyledTableCell>
+                <StyledTableCell align="center">
                   {customer.first_name} {customer.last_name}
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  {" "}
                   {customer.phone}
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  {" "}
                   {customer.email}
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  {" "}
                   {customer.address}
                 </StyledTableCell>
                 <StyledTableCell align="center">
